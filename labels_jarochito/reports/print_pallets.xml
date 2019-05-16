@@ -7,17 +7,23 @@
 					<div class="page">
 						<div class="row">
 							<div class="col-12">
-								<span t-field="o.name" style="font-size: 60px;" />
+								<span t-field="o.name" style="font-size: 50px;" />
 							</div>
 						</div>
-						<br/>
-						<div class="row" style="margin-top:1em;">
+						<div class="row">
 							<div class="col-12 text-center">
-								<strong> <span t-field="o.pallet" style="font-size:85px;"/> </strong> 
+								<strong> <span t-field="o.pallet" style="font-size:60px;"/> </strong> 
+							</div>
+						</div>
+						<div class="row">
+							<t t-set="codebar" t-value="o.name,o.pallet,o.turn,o.date" />
+							<div class="col-12 text-center">
+								<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128',codebar, 1000, 200)" />
+								<!-- <span t-esc="codebar" /> -->
 							</div>
 						</div>
 						<hr style="background-color:#000; height:2px;" />
-						<div class="row" style="margin-top: 4em; margin-bottom: 4em;">
+						<div class="row" style="margin-top: 1em; margin-bottom: 1em;">
 							<div class="col-6 text-center">
 								<strong style="font-size:50px;">Turno:</strong>	<span t-field="o.turn" style="font-size:50px; margin-left:1em;" />
 							</div>
