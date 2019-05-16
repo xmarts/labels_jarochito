@@ -6,7 +6,7 @@ class LabelsPallets(models.Model):
 
 	_name = 'labels.pallets'
 
-	def _folio_default(self):
+	def _name_default(self):
 		cr = self.env.cr
 		cr.execute('select "id" from "labels_pallets" order by "id" desc limit 1')
 		id_returned = cr.fetchone()
@@ -20,7 +20,7 @@ class LabelsPallets(models.Model):
 			text = pref + str(max(id_returned) + 1)
 		return text
 
-	name = fields.Char( string = 'Nombre' , readonly = True, default = _folio_default )
+	name = fields.Char( string = 'Nombre' , readonly = True, default = _name_default )
 
 	turn = fields.Selection( [('mat','Matutino'),('ves','Vespertino'),('noc','Nocturno')] , string = 'Turno' )
 
