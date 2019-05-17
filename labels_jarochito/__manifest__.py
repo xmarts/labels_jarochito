@@ -9,7 +9,7 @@
         Creación de etiquetas para tarimas, con datos como turno, fecha y tarima a seleccionar.
     """,
 
-    'author': "Xmarts, Colaborador : Marco Aguilar",
+    'author': "Xmarts y Colaborador : Marco Aguilar",
     'website': "http://www.xmarts.com",
 
     # Categories can be used to filter modules in modules listing
